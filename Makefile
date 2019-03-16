@@ -31,9 +31,9 @@ include $(DEVKITPRO)/libnx/switch_rules
 #     - <libnx folder>/default_icon.jpg
 #---------------------------------------------------------------------------------
 
-APP_TITLE := UnderProject Updater
-APP_AUTHOR := UnderProject Team
-APP_VERSION := 1.1
+APP_TITLE := Translation Hub
+APP_AUTHOR := D3fau4
+APP_VERSION := 1.2
 
 ICON := Icon.jpg
 TARGET		:=	UnderProject-Updater

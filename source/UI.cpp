@@ -400,7 +400,7 @@ UI::UI(string Title, string Version) {
     //Main pages
     mainMenu.push_back(MenuOption("UnderProjectNX", "Selecciona tu CFW.", nullptr));
 	mainMenu.push_back(MenuOption("DeltaProjectNX (Alpha)", "Selecciona tu CFW.", nullptr));
-	mainMenu.push_back(MenuOption("Isaac", "Selecciona tu CFW.", nullptr));
+	mainMenu.push_back(MenuOption("Isaac", "Selecciona tu CFW. (Todos los creditos a TBOIsaacSpain)", nullptr));
     mainMenu.push_back(MenuOption("Update ME", "", bind(&UI::optUpdateHB, this)));
     mainMenu.push_back(MenuOption("About", "About UnderProjectNX Updater.",  bind(&UI::optAbout, this)));
 
