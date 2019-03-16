@@ -247,17 +247,17 @@ void UI::optdeltarun() {
 void UI::optisaacrunams() {
 	//atm
 	cfwpath = "atmosphere";
-	optdeltarun();
+	optisaacrun();
 }
 void UI::optisaacrunrei() {
 	//rei
 	cfwpath = "ReiNX";
-	optdeltarun();
+	optisaacrun();
 }
 void UI::optisaacrunsxos() {
 	//sxos
 	cfwpath = "sxos";
-	optdeltarun();
+	optisaacrun();
 }
 
 //Isaac patch
