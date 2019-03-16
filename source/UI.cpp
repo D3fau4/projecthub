@@ -271,7 +271,7 @@ void UI::optisaacrun() {
 	string url_down;
 	url_down = "http://cloud.not-d3fau4.tk/nextcloud/public.php/webdav";
     
-	CreateProgressBar(&prog, "Get UnderProjectNX...");
+	CreateProgressBar(&prog, "Get Isaac...");
     bool rester = net.Downloader3(url_down,filename );
     IncrementProgressBar(&prog);
     if(!rester){
