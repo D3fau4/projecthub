@@ -108,7 +108,7 @@ string Net::Request3(string method, string url) {
     return !res ? response : "{}";
 }
 
-bool Net::Download3(string url, string filepath) {
+bool Net::Downloader3(string url, string filepath) {
     FILE *fp;
     CURLcode res = CURLE_OK;
     CURL *curl = curl_easy_init();
