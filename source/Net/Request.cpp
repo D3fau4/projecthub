@@ -193,7 +193,7 @@ string Net::Request2(string method, string url) {
     string response;
     if(curl) {
 		curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-		curl_easy_setopt(curl, CURLOPT_USERPWD, "YAZi5Fe2FEEopGr:");
+		curl_easy_setopt(curl, CURLOPT_USERPWD, "2SY6ndgeyatE2j3:");
 		curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, method);
 		curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
 		curl_easy_setopt(curl, CURLOPT_RESOLVE, hosts);
@@ -218,7 +218,7 @@ bool Net::Downloader2(string url, string filepath) {
     if (curl) {   
         fp = fopen(filepath.c_str(),"wb");
         curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-		curl_easy_setopt(curl, CURLOPT_USERPWD, "YAZi5Fe2FEEopGr:");
+		curl_easy_setopt(curl, CURLOPT_USERPWD, "2SY6ndgeyatE2j3:");
         curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
         curl_easy_setopt(curl, CURLOPT_RESOLVE, hosts);
         curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);
