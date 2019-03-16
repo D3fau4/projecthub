@@ -82,6 +82,11 @@ class UI
 		void optdeltarunams();
 		void optdeltarunrei();
 		void optdeltarunsxos();
+		
+		void optisaacrun();
+		void optisaacrunams();
+		void optisaacrunrei();
+		void optisaacrunsxos();
 
 		
 		void optDecompres();

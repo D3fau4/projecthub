@@ -244,7 +244,57 @@ void UI::optdeltarun() {
 }
 
 
+void UI::optisaacrunams() {
+	//atm
+	cfwpath = "atmosphere";
+	optdeltarun();
+}
+void UI::optisaacrunrei() {
+	//rei
+	cfwpath = "ReiNX";
+	optdeltarun();
+}
+void UI::optisaacrunsxos() {
+	//sxos
+	cfwpath = "sxos";
+	optdeltarun();
+}
 
+//Isaac patch
+void UI::optisaacrun() {
+    ProgBar prog;
+    prog.max = 4;
+    prog.step = 1;
+	string filename = "/ISAAC.zip";
+    Net net = Net();
+    hidScanInput();
+	string url_down;
+	url_down = "http://cloud.not-d3fau4.tk/nextcloud/public.php/webdav";
+    
+	CreateProgressBar(&prog, "Get UnderProjectNX...");
+    bool rester = net.Downloader3(url_down,filename );
+    IncrementProgressBar(&prog);
+    if(!rester){
+        appletBeginBlockingHomeButton(0);
+        unzFile zip = Utils::zip_open(filename.c_str()); IncrementProgressBar(&prog);
+		if(cfwpath == "atmosphere"){Utils::zip_extract_all(zip, "/atmosphere/"); IncrementProgressBar(&prog);}
+		if(cfwpath == "ReiNX"){Utils::zip_extract_all(zip, "/ReiNX/"); IncrementProgressBar(&prog);}
+		if(cfwpath == "sxos"){Utils::zip_extract_all(zip, "/sxos/"); IncrementProgressBar(&prog);}
+        Utils::zip_close(zip); IncrementProgressBar(&prog);
+        remove(filename.c_str());
+        appletEndBlockingHomeButton();
+		remove("/switch/UPNXver.txt");
+		string secconder = "Ultima version instalada en "+cfwpath;
+		std::ofstream notes("sdmc:/switch/UPNXver.txt", std::ios::app);
+		notes << secconder;
+		notes.close();
+		rig_count = 1;
+		MessageBox("Patch","Patch Apply successfully!-.-", TYPE_OK);
+    }else{
+		MessageBox("Patch","error"+GetPatch+"!-.-", TYPE_OK);
+        return;
+    }
+}
 
 
 
@@ -350,6 +400,7 @@ UI::UI(string Title, string Version) {
     //Main pages
     mainMenu.push_back(MenuOption("UnderProjectNX", "Selecciona tu CFW.", nullptr));
 	mainMenu.push_back(MenuOption("DeltaProjectNX (Alpha)", "Selecciona tu CFW.", nullptr));
+	mainMenu.push_back(MenuOption("Isaac", "Selecciona tu CFW.", nullptr));
     mainMenu.push_back(MenuOption("Update ME", "", bind(&UI::optUpdateHB, this)));
     mainMenu.push_back(MenuOption("About", "About UnderProjectNX Updater.",  bind(&UI::optAbout, this)));
 
@@ -363,7 +414,11 @@ UI::UI(string Title, string Version) {
     mainMenu[1].subMenu.push_back(MenuOption("Atmosphere", "", bind(&UI::optdeltarunams, this)));
     mainMenu[1].subMenu.push_back(MenuOption("ReiNX", "", bind(&UI::optdeltarunrei, this)));
     mainMenu[1].subMenu.push_back(MenuOption("SXOS", "", bind(&UI::optdeltarunsxos, this)));
-	
+
+	//isaac
+    mainMenu[2].subMenu.push_back(MenuOption("Atmosphere", "", bind(&UI::optdeltarunams, this)));
+    mainMenu[2].subMenu.push_back(MenuOption("ReiNX", "", bind(&UI::optdeltarunrei, this)));
+    mainMenu[2].subMenu.push_back(MenuOption("SXOS", "", bind(&UI::optdeltarunsxos, this)));
 	
 //    mainMenu[2].subMenu.push_back(MenuOption("Update ME", "", bind(&UI::optUpdateHB, this)));
 	
