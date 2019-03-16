@@ -416,9 +416,9 @@ UI::UI(string Title, string Version) {
     mainMenu[1].subMenu.push_back(MenuOption("SXOS", "", bind(&UI::optdeltarunsxos, this)));
 
 	//isaac
-    mainMenu[2].subMenu.push_back(MenuOption("Atmosphere", "", bind(&UI::optdeltarunams, this)));
-    mainMenu[2].subMenu.push_back(MenuOption("ReiNX", "", bind(&UI::optdeltarunrei, this)));
-    mainMenu[2].subMenu.push_back(MenuOption("SXOS", "", bind(&UI::optdeltarunsxos, this)));
+    mainMenu[2].subMenu.push_back(MenuOption("Atmosphere", "", bind(&UI::optisaacrunams, this)));
+    mainMenu[2].subMenu.push_back(MenuOption("ReiNX", "", bind(&UI::optisaacrunrei, this)));
+    mainMenu[2].subMenu.push_back(MenuOption("SXOS", "", bind(&UI::optisaacrunsxos, this)));
 	
 //    mainMenu[2].subMenu.push_back(MenuOption("Update ME", "", bind(&UI::optUpdateHB, this)));
 	
