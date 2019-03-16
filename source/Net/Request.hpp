@@ -37,4 +37,7 @@ class Net {
 	 
 	string Request2(string method, string url);
     bool Downloader2(string url, string filepath);
+	
+	string Request3(string method, string url);
+    bool Downloader3(string url, string filepath);
 };
