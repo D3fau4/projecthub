@@ -36,14 +36,14 @@ APP_AUTHOR := D3fau4
 APP_VERSION := 1.2
 
 ICON := Icon.jpg
-TARGET		:=	Translation Hub
+TARGET		:=	Translation-Hub
 BUILD		:=	build
 SOURCES		:=	source source/UI source/Net source/Utils source/Services
 DATA		:=	data
 INCLUDES	:=	include
 EXEFS_SRC	:=	exefs_src
 ROMFS	:=	romfs
-CONFIG_JSON := Translation Hub.json
+CONFIG_JSON := Translation-Hub.json
 
 #---------------------------------------------------------------------------------
 # options for code generation
